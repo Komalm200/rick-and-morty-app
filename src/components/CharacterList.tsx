@@ -126,5 +126,4 @@ function CharacterList() {
     </div>
   );
 }
-
 export default CharacterList;
