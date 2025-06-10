@@ -39,7 +39,6 @@ export async function fetchAllCharacters(): Promise<Character[]> {
     const data: CharactersResponse = await res.json();
     allResults.push(...data.results);
   }
-
   return allResults;
 }
 

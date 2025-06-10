@@ -42,5 +42,4 @@ const { id } = useParams({ from: '/character/$id' });
     </div>
   );
 }
-
 export default CharacterDetail;

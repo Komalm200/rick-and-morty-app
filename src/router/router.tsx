@@ -32,7 +32,6 @@ const routeTree = rootRoute.addChildren([
   detailRoute,
 ]);
 
-
 export const router = createRouter({
   routeTree,
 });
