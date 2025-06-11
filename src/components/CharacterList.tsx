@@ -1,9 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
-import {
-  fetchAllCharacters,
-  Character,
-} from "../api/rickAndMorty";
+import { fetchAllCharacters, Character } from "../api/rickAndMorty";
 import { useState } from "react";
 
 const ITEMS_PER_PAGE = 5;
@@ -69,60 +66,39 @@ function CharacterList() {
           ))}
         </tbody>
       </table>
-
-      {/* <div className="mt-4 flex justify-center items-center gap-4">
+      <div className="mt-4 flex justify-center items-center gap-2 flex-wrap">
+        <button
+          onClick={() => handleLocalPageChange(1)}
+          disabled={localPage === 1}
+          className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
+        >
+          ⏮
+        </button>
         <button
           onClick={() => handleLocalPageChange(localPage - 1)}
           disabled={localPage === 1}
-          className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+          className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
         >
           ⬅ Prev
         </button>
-        <span>
+        <span className="px-2">
           Page {localPage} of {totalLocalPages}
         </span>
         <button
           onClick={() => handleLocalPageChange(localPage + 1)}
           disabled={localPage === totalLocalPages}
-          className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+          className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
         >
           Next ➡
         </button>
-      </div> */}
-      <div className="mt-4 flex justify-center items-center gap-2 flex-wrap">
-  <button
-    onClick={() => handleLocalPageChange(1)}
-    disabled={localPage === 1}
-    className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
-  >
-    ⏮
-  </button>
-  <button
-    onClick={() => handleLocalPageChange(localPage - 1)}
-    disabled={localPage === 1}
-    className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
-  >
-    ⬅ Prev
-  </button>
-  <span className="px-2">
-    Page {localPage} of {totalLocalPages}
-  </span>
-  <button
-    onClick={() => handleLocalPageChange(localPage + 1)}
-    disabled={localPage === totalLocalPages}
-    className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
-  >
-    Next ➡
-  </button>
-  <button
-    onClick={() => handleLocalPageChange(totalLocalPages)}
-    disabled={localPage === totalLocalPages}
-    className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
-  >
-    ⏭
-  </button>
-</div>
-
+        <button
+          onClick={() => handleLocalPageChange(totalLocalPages)}
+          disabled={localPage === totalLocalPages}
+          className="px-3 py-2 bg-gray-300 rounded disabled:opacity-50"
+        >
+          ⏭
+        </button>
+      </div>
     </div>
   );
 }
